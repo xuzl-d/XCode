@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="DisjointSetUnion.hxx" />
+    <ClInclude Include="MultiThreadUtil.h" />
     <ClInclude Include="Observer.h" />
   </ItemGroup>
   <ItemGroup>
