@@ -5,7 +5,7 @@
 
 
 int main() {
-    DisjointSetUnion<int> dsu({0,1,2,3,4,5}); // 创建一个有10个元素的并查集
+    DisjointSetUnion<int> dsu(5); // 创建一个有10个元素的并查集
     dsu.unionSets(0, 1);      // 合并元素0和1所在的集合
     dsu.unionSets(2, 3);      // 合并元素2和3所在的集合
     dsu.unionSets(1, 2);      // 合并元素1和2所在集合（此时0,1,2,3已在一个集合中）

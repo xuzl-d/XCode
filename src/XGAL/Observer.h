@@ -25,10 +25,15 @@ class Observable
 {
 public:
 	virtual ~Observable() = 0;
-	virtual void AddObserver(Observer*) {};
-	virtual void DelObserver(Observer*) {};
-	virtual void Clear() {};
-	virtual void NotifyObservers() {}
+	virtual void AddObserver(Observer* pOb) { m_observers.insert(pOb); };
+	virtual void DelObserver(Observer* pOb) { m_observers.erase(pOb); };
+	virtual void Clear() { m_observers.clear(); };
+	virtual void NotifyObservers() {
+		for (auto pOb : m_observers)
+		{
+			//pOb->Update(this, arg);
+		}
+	}
 	virtual void NotifyObservers(int type) {}
 
 private:

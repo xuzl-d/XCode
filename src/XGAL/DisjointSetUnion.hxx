@@ -16,6 +16,14 @@ public:
         }
     }
 
+    template <typename U = T, typename std::enable_if<std::is_same<U, int>::value, int>::type * = nullptr>
+    explicit DisjointSetUnion(int size) : parent(size), rank(size, 0) {
+        for (size_t i = 0; i < size; ++i) {
+            indexMap[i] = i;
+            parent[i] = i;
+        }
+    }
+
     T find(const T& x) {
         int index = indexMap[x];
         if (parent[index] != x) {
